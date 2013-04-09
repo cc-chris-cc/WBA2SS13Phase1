@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<anmeldung>
+	<gruppe>
+		<gruppenleiter>
+			<vorname>Paul</vorname>
+			<nachname>Mustermann</nachname>
+			<email>muster@mann.de</email>
+			<gebdat>01.01.1985</gebdat>
+			<erfahrung>p</erfahrung>
+			<schlagzeug>true</schlagzeug>
+			<anmerkung>Keine Anmerkung</anmerkung>
+		</gruppenleiter>
+		<person>
+			<vorname>Bernd</vorname>
+			<nachname>Schulze</nachname>
+			<email>Bernd@schulze.de</email>
+			<gebdat>24.06.1984</gebdat>
+			<erfahrung>f</erfahrung>
+			<schlagzeug>true</schlagzeug>		
+		</person>
+		<person>
+			<vorname>Claudia</vorname>
+			<nachname>Müller</nachname>
+			<email>claudia@mueller.de</email>
+			<gebdat>24.08.1986</gebdat>
+			<erfahrung>f</erfahrung>
+			<schlagzeug>true</schlagzeug>		
+		</person>
+	</gruppe>
+</anmeldung>

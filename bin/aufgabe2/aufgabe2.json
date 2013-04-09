@@ -1,0 +1,33 @@
+{
+    "anmeldung":{
+        "gruppe":{
+            "gruppenleiter":{
+                "vorname":"Paul",
+                "nachname":"Mustermann",
+                "email":"muster@mann.de",
+                "gebdat":"01.01.1985",
+                "erfahrung":"p",
+                "schlagzeug":"true",
+                "anmerkung":"Keine Anmerkung"
+            },
+            "person":[
+                {
+                    "vorname":"Bernd",
+                    "nachname":"Schulze",
+                    "email":"Bernd@schulze.de",
+                    "gebdat":"24.06.1984",
+                    "erfahrung":"f",
+                    "schlagzeug":"true"
+                },
+                {
+                    "vorname":"Claudia",
+                    "nachname":"MŸller",
+                    "email":"claudia@mueller.de",
+                    "gebdat":"24.08.1986",
+                    "erfahrung":"f",
+                    "schlagzeug":"true"
+                }
+            ]
+        }
+    }
+}
