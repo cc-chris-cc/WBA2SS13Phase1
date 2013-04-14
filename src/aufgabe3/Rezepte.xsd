@@ -1,0 +1,107 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" targetNamespace="http://example.org/Rezepte"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="rezept">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="titel" type="xs:string" />
+				
+				<xs:element name="fotos" type="xs:anyURI" />
+				
+				<xs:element name="zutaten">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="zutat" maxOccurs="unbounded"
+								minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="bezeichnung" />
+										<xs:element type="xs:float" name="menge" />
+										<xs:element name="einheit">
+											<xs:simpleType>
+												<!-- Auswahlmöglichkeiten eingeschränkt durch restriction -->
+												<xs:restriction base="xs:string">
+													<!-- g = Gramm -->
+													<xs:enumeration value="g" />
+													<!--  kg = Kilogramm -->
+													<xs:enumeration value="kg" />
+													<!-- Msp. = Messerspitze -->
+													<xs:enumeration value="Msp." />
+													<!-- cl = Centiliter -->
+													<xs:enumeration value="cl" />
+													<!-- ml = Milliliter -->
+													<xs:enumeration value="ml" />
+													<!-- dl = Deziliter -->
+													<xs:enumeration value="dl" />
+													<!-- EL = Eßloeffel -->
+													<xs:enumeration value="EL" />
+													<!-- TL = Teeloeffel -->
+													<xs:enumeration value="TL" />
+													<!-- Pkt. = Packung -->
+													<xs:enumeration value="Pkt." />
+													<!-- Ei = Ei(er) -->
+													<xs:enumeration value="Ei" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute type="xs:short" name="id" use="optional" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="portionen" type="xs:integer" />
+				
+				<xs:element name="zubereitung">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="arbeitszeit" type="xs:integer" />
+							<!-- Einschränkung des Schwierigkeitsgrades -->
+							<xs:element name="schwierigkeitsgrad">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="simpel" />
+										<xs:enumeration value="mittel" />
+										<xs:enumeration value="schwierig" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="brennwertAnzeige">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="menge2" type="xs:positiveInteger" />
+										
+										<xs:element name="brennwert" type="xs:string"
+											fixed="kcal" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="text" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="kommentare">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="eintrag" maxOccurs="unbounded"
+								minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="autor" />
+										<xs:element type="xs:dateTime" name="datum" />
+										<xs:element type="xs:string" name="text" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
